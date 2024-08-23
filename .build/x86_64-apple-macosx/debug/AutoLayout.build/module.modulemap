@@ -1,0 +1,4 @@
+module AutoLayout {
+    header "/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayout.build/AutoLayout-Swift.h"
+    requires objc
+}

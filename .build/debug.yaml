@@ -1,0 +1,99 @@
+client:
+  name: basic
+  file-system: device-agnostic
+tools: {}
+targets:
+  "AutoLayout-debug.module": ["<AutoLayout-debug.module>"]
+  "AutoLayoutPackageTests-debug.test": ["<AutoLayoutPackageTests-debug.test>"]
+  "AutoLayoutTests-debug.module": ["<AutoLayoutTests-debug.module>"]
+  "PackageStructure": ["<PackageStructure>"]
+  "main": ["<AutoLayout-debug.module>"]
+  "test": ["<AutoLayout-debug.module>","<AutoLayoutPackageTests-debug.test>","<AutoLayoutTests-debug.module>"]
+default: "main"
+nodes:
+  "/Users/magalu/Documents/AutoLayout/Source/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+  "/Users/magalu/Documents/AutoLayout/Tests/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+commands:
+  "/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayout.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/Users/magalu/Documents/AutoLayout/Source/AutoLayout/Config/AppDelegate.swift","/Users/magalu/Documents/AutoLayout/Source/AutoLayout/Config/SceneDelegate.swift","/Users/magalu/Documents/AutoLayout/Source/AutoLayout/Project/AutoLayout.swift","/Users/magalu/Documents/AutoLayout/Source/AutoLayout/Project/Extension/Array+Extension.swift","/Users/magalu/Documents/AutoLayout/Source/AutoLayout/Project/Extension/NSLayoutConstraint+Extension.swift","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayout.build/DerivedSources/resource_bundle_accessor.swift"]
+    outputs: ["/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayout.build/sources"]
+    description: "Write auxiliary file /Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayout.build/sources"
+
+  "/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayoutPackageTests.product/Objects.LinkFileList":
+    tool: write-auxiliary-file
+    inputs: ["<link-file-list>","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayout.build/AppDelegate.swift.o","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayout.build/Array+Extension.swift.o","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayout.build/AutoLayout.swift.o","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayout.build/NSLayoutConstraint+Extension.swift.o","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayout.build/SceneDelegate.swift.o","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayout.build/resource_bundle_accessor.swift.o","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayoutTests.build/AutoLayoutTests.swift.o","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayoutTests.build/AutoLayoutUITests.swift.o","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayoutTests.build/AutoLayoutUITestsLaunchTests.swift.o"]
+    outputs: ["/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayoutPackageTests.product/Objects.LinkFileList"]
+    description: "Write auxiliary file /Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayoutPackageTests.product/Objects.LinkFileList"
+
+  "/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayoutTests.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/Users/magalu/Documents/AutoLayout/Tests/AutoLayoutTests/AutoLayoutTests.swift","/Users/magalu/Documents/AutoLayout/Tests/AutoLayoutUITests/AutoLayoutUITests.swift","/Users/magalu/Documents/AutoLayout/Tests/AutoLayoutUITests/AutoLayoutUITestsLaunchTests.swift"]
+    outputs: ["/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayoutTests.build/sources"]
+    description: "Write auxiliary file /Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayoutTests.build/sources"
+
+  "/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayout_AutoLayout.bundle/Assets.xcassets":
+    tool: copy-tool
+    inputs: ["/Users/magalu/Documents/AutoLayout/Source/AutoLayout/Assets.xcassets/"]
+    outputs: ["/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayout_AutoLayout.bundle/Assets.xcassets/"]
+    description: "Copying /Users/magalu/Documents/AutoLayout/Source/AutoLayout/Assets.xcassets"
+
+  "/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt":
+    tool: write-auxiliary-file
+    inputs: ["<swift-get-version>","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"]
+    outputs: ["/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"]
+    always-out-of-date: "true"
+    description: "Write auxiliary file /Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+
+  "<AutoLayout-debug.module>":
+    tool: phony
+    inputs: ["/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayout.build/AppDelegate.swift.o","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayout.build/SceneDelegate.swift.o","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayout.build/AutoLayout.swift.o","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayout.build/Array+Extension.swift.o","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayout.build/NSLayoutConstraint+Extension.swift.o","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayout.build/resource_bundle_accessor.swift.o","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayout.swiftmodule"]
+    outputs: ["<AutoLayout-debug.module>"]
+
+  "<AutoLayoutPackageTests-debug.test>":
+    tool: phony
+    inputs: ["/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayoutPackageTests.xctest/Contents/MacOS/AutoLayoutPackageTests"]
+    outputs: ["<AutoLayoutPackageTests-debug.test>"]
+
+  "<AutoLayoutTests-debug.module>":
+    tool: phony
+    inputs: ["/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayoutTests.build/AutoLayoutTests.swift.o","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayoutTests.build/AutoLayoutUITests.swift.o","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayoutTests.build/AutoLayoutUITestsLaunchTests.swift.o","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayoutTests.swiftmodule"]
+    outputs: ["<AutoLayoutTests-debug.module>"]
+
+  "AutoLayout-debug.module-resources":
+    tool: phony
+    inputs: ["/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayout_AutoLayout.bundle/Assets.xcassets/"]
+    outputs: ["<AutoLayout-debug.module-resources>"]
+
+  "C.AutoLayout-debug.module":
+    tool: shell
+    inputs: ["/Users/magalu/Documents/AutoLayout/Source/AutoLayout/Config/AppDelegate.swift","/Users/magalu/Documents/AutoLayout/Source/AutoLayout/Config/SceneDelegate.swift","/Users/magalu/Documents/AutoLayout/Source/AutoLayout/Project/AutoLayout.swift","/Users/magalu/Documents/AutoLayout/Source/AutoLayout/Project/Extension/Array+Extension.swift","/Users/magalu/Documents/AutoLayout/Source/AutoLayout/Project/Extension/NSLayoutConstraint+Extension.swift","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayout.build/DerivedSources/resource_bundle_accessor.swift","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt","<AutoLayout-debug.module-resources>","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayout.build/sources"]
+    outputs: ["/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayout.build/AppDelegate.swift.o","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayout.build/SceneDelegate.swift.o","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayout.build/AutoLayout.swift.o","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayout.build/Array+Extension.swift.o","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayout.build/NSLayoutConstraint+Extension.swift.o","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayout.build/resource_bundle_accessor.swift.o","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayout.swiftmodule"]
+    description: "Compiling Swift Module 'AutoLayout' (6 sources)"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-module-name","AutoLayout","-emit-dependencies","-emit-module","-emit-module-path","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayout.swiftmodule","-output-file-map","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayout.build/output-file-map.json","-parse-as-library","-incremental","-c","@/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayout.build/sources","-I","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug","-target","x86_64-apple-macosx10.13","-swift-version","5","-enable-batch-mode","-index-store-path","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/index/store","-Onone","-enable-testing","-j8","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/ModuleCache","-parseable-output","-parse-as-library","-emit-objc-header","-emit-objc-header-path","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayout.build/AutoLayout-Swift.h","-color-diagnostics","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-g","-Xcc","-isysroot","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk","-Xcc","-F","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-Xcc","-fPIC","-Xcc","-g"]
+
+  "C.AutoLayoutPackageTests-debug.test":
+    tool: shell
+    inputs: ["/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayout.build/AppDelegate.swift.o","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayout.build/Array+Extension.swift.o","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayout.build/AutoLayout.swift.o","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayout.build/NSLayoutConstraint+Extension.swift.o","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayout.build/SceneDelegate.swift.o","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayout.build/resource_bundle_accessor.swift.o","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayoutTests.build/AutoLayoutTests.swift.o","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayoutTests.build/AutoLayoutUITests.swift.o","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayoutTests.build/AutoLayoutUITestsLaunchTests.swift.o","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayoutPackageTests.product/Objects.LinkFileList"]
+    outputs: ["/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayoutPackageTests.xctest/Contents/MacOS/AutoLayoutPackageTests"]
+    description: "Linking ./.build/x86_64-apple-macosx/debug/AutoLayoutPackageTests.xctest/Contents/MacOS/AutoLayoutPackageTests"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-L","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug","-o","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayoutPackageTests.xctest/Contents/MacOS/AutoLayoutPackageTests","-module-name","AutoLayoutPackageTests","-Xlinker","-bundle","-Xlinker","-rpath","-Xlinker","@loader_path/../../../","@/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayoutPackageTests.product/Objects.LinkFileList","-target","x86_64-apple-macosx13.0","-Xlinker","-add_ast_path","-Xlinker","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayout.swiftmodule","-Xlinker","-add_ast_path","-Xlinker","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayoutTests.swiftmodule","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-g"]
+
+  "C.AutoLayoutTests-debug.module":
+    tool: shell
+    inputs: ["/Users/magalu/Documents/AutoLayout/Tests/AutoLayoutTests/AutoLayoutTests.swift","/Users/magalu/Documents/AutoLayout/Tests/AutoLayoutUITests/AutoLayoutUITests.swift","/Users/magalu/Documents/AutoLayout/Tests/AutoLayoutUITests/AutoLayoutUITestsLaunchTests.swift","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayout.swiftmodule","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayoutTests.build/sources"]
+    outputs: ["/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayoutTests.build/AutoLayoutTests.swift.o","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayoutTests.build/AutoLayoutUITests.swift.o","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayoutTests.build/AutoLayoutUITestsLaunchTests.swift.o","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayoutTests.swiftmodule"]
+    description: "Compiling Swift Module 'AutoLayoutTests' (3 sources)"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-module-name","AutoLayoutTests","-emit-dependencies","-emit-module","-emit-module-path","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayoutTests.swiftmodule","-output-file-map","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayoutTests.build/output-file-map.json","-parse-as-library","-incremental","-c","@/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/AutoLayoutTests.build/sources","-I","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug","-target","x86_64-apple-macosx13.0","-swift-version","5","-enable-batch-mode","-index-store-path","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/index/store","-Onone","-enable-testing","-j8","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/Users/magalu/Documents/AutoLayout/.build/x86_64-apple-macosx/debug/ModuleCache","-parseable-output","-parse-as-library","-color-diagnostics","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-g","-Xcc","-isysroot","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk","-Xcc","-F","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-Xcc","-fPIC","-Xcc","-g"]
+
+  "PackageStructure":
+    tool: package-structure-tool
+    inputs: ["/Users/magalu/Documents/AutoLayout/Source/","/Users/magalu/Documents/AutoLayout/Tests/","/Users/magalu/Documents/AutoLayout/Package.swift","/Users/magalu/Documents/AutoLayout/Package.resolved"]
+    outputs: ["<PackageStructure>"]
+    description: "Planning build"
+    allow-missing-inputs: true
+
