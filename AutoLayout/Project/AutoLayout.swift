@@ -18,15 +18,10 @@ final class AutoLayout {
 
     func applyConstraint(_ block: ((AutoLayout) -> Void)) {
         view.translatesAutoresizingMaskIntoConstraints = false
-        block(
-            self
-        )
+        block(self)
     }
 
-    func edges(
-        in superView: UIView,
-        with offSet: UIEdgeInsets? = nil
-    ) {
+    func edges(in superView: UIView, with offSet: UIEdgeInsets? = nil) {
         let constraints = NSLayoutConstraint.inset(
             view: self.view,
             inSuperview: superView,
@@ -36,11 +31,7 @@ final class AutoLayout {
         constraints.activate()
     }
 
-    func edges(
-        in superView: UIView,
-        offSet: CGFloat,
-        priority: UILayoutPriority = .required
-    ) {
+    func edges(in superView: UIView, offSet: CGFloat, priority: UILayoutPriority = .required) {
         let inset = UIEdgeInsets(
             top: offSet,
             left: offSet,
@@ -262,23 +253,13 @@ final class AutoLayout {
     }
 
     @discardableResult
-    func height(
-        equalTo dimension: NSLayoutDimension,
-        priority: UILayoutPriority = .required,
-        multiplier: Float = 1,
-        _ size: Float = 0
+    func width(
+        relatedTo view: UIView,
+        relation: NSLayoutConstraintType = .equal,
+        multiplier: CGFloat = 1,
+        _ size: CGFloat = 0
     ) -> NSLayoutConstraint {
-        // ARRUMAR
-        return NSLayoutConstraint()
-    }
 
-    @discardableResult
-    func width(relatedTo view: UIView,
-               relation: NSLayoutConstraintType = .equal,
-               multiplier: CGFloat = 1,
-               _ size: CGFloat = 0
-    ) -> NSLayoutConstraint {
-        
         let constraint = NSLayoutConstraint.width(
             firstView: self.view,
             secondView: view,
@@ -286,7 +267,7 @@ final class AutoLayout {
             constant: size,
             multiplier: multiplier
         )
-        
+
         constraint.isActive = true
         return constraint
         
@@ -305,17 +286,6 @@ final class AutoLayout {
         )
         constraint.isActive = true
         return constraint
-    }
-
-    @discardableResult
-    func width(
-        equalTo dimension: NSLayoutDimension,
-        priority: UILayoutPriority = .required,
-        multiplier: Float = 1,
-        _ size: Float = 0
-    ) -> NSLayoutConstraint {
-        // ARRUMAR
-        return NSLayoutConstraint()
     }
 
     func size(relation: NSLayoutConstraintType = .equal, _ size: CGFloat) {
