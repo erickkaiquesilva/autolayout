@@ -1,10 +1,3 @@
-//
-//  AutoLayoutUITestsLaunchTests.swift
-//  AutoLayoutUITests
-//
-//  Created by Magalu on 23/08/24.
-//
-
 import XCTest
 
 final class AutoLayoutUITestsLaunchTests: XCTestCase {
